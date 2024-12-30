@@ -1,41 +1,25 @@
 #ifndef POINT2D_H
 #define POINT2D_H
 
-#include <iostream>
-#include <cmath> // Para funciones sqrt() y pow()
+#include <ostream>
+#include <cmath> 
 
-using namespace std; // Uso del espacio de nombres estándar de C++
+using namespace std;
 
 class Point2D {
 public:
-    double x; // Coordenada x
-    double y; // Coordenada y
+    double x;
+    double y;
 
-    // Constructor por defecto y parametrizado
-    Point2D(double x = 0, double y = 0) : x(x), y(y) {}
+    Point2D(double x = 0, double y = 0);
 
-    // Calcula la distancia euclidiana entre dos puntos
-    static double distance(const Point2D &a, const Point2D &b) {
-        return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
-    }
+    static double distance(const Point2D &a, const Point2D &b);
 
-    // Sobrecarga del operador == para comparar dos puntos
-    friend bool operator==(const Point2D &a, const Point2D &b) {
-        return (a.x == b.x) && (a.y == b.y);
-    }
+    friend bool operator==(const Point2D &a, const Point2D &b);
+    friend bool operator!=(const Point2D &a, const Point2D &b);
 
-    // Sobrecarga del operador != para comparar si dos puntos son diferentes
-    friend bool operator!=(const Point2D &a, const Point2D &b) {
-        return !(a == b);
-    }
-
-    // Sobrecarga del operador << para imprimir un punto
-    friend ostream& operator<<(ostream &out, const Point2D &p) {
-        out << "(" << p.x << ", " << p.y << ")";
-        return out;
-    }
+    friend ostream& operator<<(ostream &out, const Point2D &p);
 };
 
 #endif // POINT2D_H
-
 

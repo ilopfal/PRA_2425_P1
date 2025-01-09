@@ -28,7 +28,7 @@ public:
 
     T operator[](int pos) {
         if (pos < 0 || pos >= n) {
-            throw out_of_range("Index out of range");
+            throw out_of_range("Indice fuera de rango");
         }
         Node<T>* current = first;
         for (int i = 0; i < pos; ++i) {
@@ -53,7 +53,7 @@ public:
 
     void insert(int pos, T e) {
         if (pos < 0 || pos > n) {
-            throw out_of_range("Index out of range");
+            throw out_of_range("Indice fuera de rango");
         }
         Node<T>* newNode = new Node<T>(e);
         if (pos == 0) {
@@ -80,7 +80,7 @@ public:
 
     T remove(int pos) {
         if (pos < 0 || pos >= n) {
-            throw out_of_range("Index out of range");
+            throw out_of_range("Indice fuera de rango");
         }
         Node<T>* current = first;
         T data;
@@ -104,7 +104,7 @@ public:
 
     T get(int pos) const {
         if (pos < 0 || pos >= n) {
-            throw out_of_range("Index out of range");
+            throw out_of_range("Indice fuera de rango");
         }
         Node<T>* current = first;
         for (int i = 0; i < pos; i++) {

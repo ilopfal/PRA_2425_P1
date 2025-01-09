@@ -42,7 +42,7 @@ public:
     // Inserta el elemento e en la posición pos.
     virtual void insert(int pos, T e) override {
         if (pos < 0 || pos > n) {
-            throw out_of_range("Indice fuera de rango");
+            throw out_of_range("Posición invalida");
         }
         if (n == max) {
             resize(max * 2);
@@ -67,7 +67,7 @@ public:
     // Elimina y devuelve el elemento situado en la posición pos.
     virtual T remove(int pos) override {
         if (pos < 0 || pos >= n) {
-            throw out_of_range("Indice fuera de rango");
+            throw out_of_range("Posición invalida");
         }
         T removedItem = arr[pos];
         for (int i = pos; i < n - 1; i++) {
@@ -83,7 +83,7 @@ public:
     // Devuelve el elemento situado en la posición pos.
     virtual T get(int pos) const override {
         if (pos < 0 || pos >= n) {
-            throw out_of_range("Indice fuera de rango");
+            throw out_of_range("Posición invalida");
         }
         return arr[pos];
     }
@@ -111,7 +111,7 @@ public:
     // Sobrecarga del operador de índice.
     T operator[](int pos) {
         if (pos < 0 || pos >= n) {
-            throw out_of_range("Indice fuera de rango");
+            throw out_of_range("Posición invalida");
         }
         return arr[pos];
     }
